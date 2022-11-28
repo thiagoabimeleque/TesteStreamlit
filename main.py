@@ -11,5 +11,5 @@ option = st.sidebar.selectbox(
      df['Ativo'].unique())
 
 st.title("Ativo: " + option)
-st.subheader(yf.download(option + '.SA', start="2022-11-28")['Adj Close'][0])
+st.subheader(round(yf.download(option + '.SA', start="2022-11-28")['Adj Close'][0],2))
 st.write(df.query(f'Ativo == "{option}"')['Total'].sum())
